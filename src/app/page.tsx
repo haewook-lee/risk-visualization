@@ -14,6 +14,26 @@ async function getData() {
 
   const json = await csvToJson().fromFile(csvPath)
 
+  json.map((value: any) => {
+    let cleanFactors: any = {}
+    let riskObject = JSON.parse(value["Risk Factors"])
+
+    for (const [key, value] of Object.entries(riskObject)) {
+      if (value === 0) {
+        continue
+      } else {
+        cleanFactors[key] = value.toFixed(2) // eslint-disable-line no-use-before-define
+      }
+    }
+
+    cleanFactors = JSON.stringify(cleanFactors)
+      .replace(/[\/#!$%\^&\*;"{}=\-_`~()]/g, "")
+      .replaceAll(":", ": ")
+      .replaceAll(",", ", ")
+
+    value["Risk Factors"] = cleanFactors
+  })
+
   // const jsonString = JSON.stringify(json, null, 2)
 
   return json
@@ -21,7 +41,7 @@ async function getData() {
 
 export default async function Home() {
   const data = await getData()
-  console.log(data)
+  // console.log(data.map((value: any) => value["Risk Factors"]))
 
   return (
     <>

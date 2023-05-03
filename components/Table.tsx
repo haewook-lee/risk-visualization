@@ -35,7 +35,10 @@ function Map({ marks }: any) {
     console.log(params.data)
 
   const riskFactorsFormatter = (params: any) => {
-    let riskFactors = params.value.replace(/[\/#!$%\^&\*;"{}=\-_`~()]/g, "")
+    let riskFactors = params.value
+    //   .replace(/[\/#!$%\^&\*;"{}=\-_`~()]/g, "")
+    //   .replaceAll(":", ": ")
+    //   .replaceAll(",", ", ")
     return riskFactors
   }
 
