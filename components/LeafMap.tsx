@@ -22,19 +22,17 @@ function LeafletCanvasMarker({ marks, years }: { marks: any; years: number }) {
   useEffect(() => {
     if (!map) return
 
-    console.log(years)
-
     let ciLayer = L.canvasIconLayer({}).addTo(map) // eslint-disable-line no-use-before-define
 
-    ciLayer.addOnClickListener(function (_e: any, data: any) {
-      console.log(data)
-    })
-    ciLayer.addOnHoverListener(function (
-      e: any,
-      data: { data: { _leaflet_id: any } }[]
-    ) {
-      console.log(data[0].data._leaflet_id)
-    })
+    // ciLayer.addOnClickListener(function (_e: any, data: any) {
+    //   console.log(data)
+    // })
+    // ciLayer.addOnHoverListener(function (
+    //   e: any,
+    //   data: { data: { _leaflet_id: any } }[]
+    // ) {
+    //   console.log(data[0].data._leaflet_id)
+    // })
 
     let gIcon = L.icon({
       iconUrl:
