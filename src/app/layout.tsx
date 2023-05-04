@@ -31,11 +31,13 @@ export default function RootLayout({
             crossOrigin=""
           ></Script>
         </head>
-        <body className={inter.className + "bg-primary h-screen"}>
-          <nav className="navbar bg-accent">
-            <a className="btn btn-outline normal-case text-xl">Risk-Viz</a>
+        <body className={inter.className + "h-screen m-0 p-0 bg-base-100"}>
+          <nav className="navbar bg-neutral">
+            <a className="btn btn-outline normal-case text-xl text-accent">
+              Risk-Viz
+            </a>
           </nav>
-          <div className="bg-base-100">{children}</div>
+          <div>{children}</div>
           <footer className="footer footer-center p-4 bg-neutral text-neutral-content mt-64">
             <div>
               <p>Copyright © 2023 - All right reserved by Haewook Lee</p>

@@ -87,16 +87,14 @@ function Map({ marks }: any) {
   ])
 
   return (
-    <>
-      <div className="ag-theme-alpine-dark" style={{ height: 400, width: 600 }}>
-        <AgGridReact
-          rowData={rowData2}
-          columnDefs={columnDefs2}
-          onCellClicked={onCellClicked}
-          pagination={true}
-        ></AgGridReact>
-      </div>
-    </>
+    <div className="ag-theme-alpine-dark">
+      <AgGridReact
+        rowData={rowData2}
+        columnDefs={columnDefs2}
+        onCellClicked={onCellClicked}
+        pagination={true}
+      ></AgGridReact>
+    </div>
   )
 }
 

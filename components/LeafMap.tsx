@@ -16,7 +16,13 @@ type Mark = {
   Year: string
 }
 
-function LeafletCanvasMarker({ marks, years }: { marks: any; years: number }) {
+function LeafletCanvasMarker({
+  marks,
+  years,
+}: {
+  marks: Mark[]
+  years: number
+}) {
   const map = useMap()
 
   useEffect(() => {
@@ -80,12 +86,16 @@ function LeafletCanvasMarker({ marks, years }: { marks: any; years: number }) {
             icon: icon,
           }
         ).bindPopup(
-          marks[i]["Asset Name"] +
-            " " +
-            marks[i].Year +
-            " " +
+          `${
+            "Asset Name: " +
+            marks[i]["Asset Name"] +
+            "\nCategory: " +
+            marks[i]["Business Category"] +
+            "\nRisk Rating: " +
             marks[i]["Risk Rating"]
+          }`
         )
+
         markers.push(marker)
       }
     }
@@ -107,28 +117,7 @@ function Map({ marks }: any) {
   }
 
   return (
-    <>
-      <p className="normal-case text-md">Decade Filter:</p>
-      <div className="btn-group">
-        <button className="normal-case btn" onClick={() => changeDecades(2030)}>
-          2030s
-        </button>
-        <button
-          className="normal-case btn btn-active"
-          onClick={() => changeDecades(2040)}
-        >
-          2040s
-        </button>
-        <button className="normal-case btn" onClick={() => changeDecades(2050)}>
-          2050s
-        </button>
-        <button className="normal-case btn" onClick={() => changeDecades(2060)}>
-          2060s
-        </button>
-        <button className="normal-case btn" onClick={() => changeDecades(2070)}>
-          2070s
-        </button>
-      </div>
+    <div>
       <div id="map">
         <MapContainer
           className="markercluster-map"
@@ -143,7 +132,52 @@ function Map({ marks }: any) {
           <LeafletCanvasMarker marks={marks} years={years} />
         </MapContainer>
       </div>
-    </>
+      <div
+        style={{
+          display: "block",
+          margin: "auto",
+          maxWidth: "300px",
+        }}
+      >
+        <div className="btn-group w-full max-w-lg">
+          <button
+            className="normal-case btn"
+            style={{ width: "60px" }}
+            onClick={() => changeDecades(2030)}
+          >
+            2030s
+          </button>
+          <button
+            className="normal-case btn btn-active"
+            style={{ width: "60px" }}
+            onClick={() => changeDecades(2040)}
+          >
+            2040s
+          </button>
+          <button
+            className="normal-case btn"
+            style={{ width: "60px" }}
+            onClick={() => changeDecades(2050)}
+          >
+            2050s
+          </button>
+          <button
+            className="normal-case btn"
+            style={{ width: "60px" }}
+            onClick={() => changeDecades(2060)}
+          >
+            2060s
+          </button>
+          <button
+            className="normal-case btn"
+            style={{ width: "60px" }}
+            onClick={() => changeDecades(2070)}
+          >
+            2070s
+          </button>
+        </div>
+      </div>
+    </div>
   )
 }
 

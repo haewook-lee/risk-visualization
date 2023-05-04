@@ -1,21 +1,44 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   daisyui: {
+    // themes: [
+    //   "light",
+    //   "dark",
+    //   "retro",
+    //   {
+    //     mytheme: {
+    //       primary: "#382D62",
+    //       secondary: "#e28f7c",
+    //       accent: "#ba2c46",
+    //       neutral: "#1D1622",
+    //       "base-100": "#EEEEF2",
+    //       info: "#7B9AEA",
+    //       success: "#178C71",
+    //       warning: "#FBB85B",
+    //       error: "#F9668E",
+    //     },
+    //   },
+    // ],
     themes: [
-      "light",
-      "dark",
-      "retro",
       {
         mytheme: {
-          primary: "#ea5665",
-          secondary: "#e28f7c",
-          accent: "#ba2c46",
-          neutral: "#1D1622",
-          "base-100": "#EEEEF2",
-          info: "#7B9AEA",
-          success: "#178C71",
-          warning: "#FBB85B",
-          error: "#F9668E",
+          primary: "#369e09",
+
+          secondary: "#9bc5f7",
+
+          accent: "#afffd6",
+
+          neutral: "#161E27",
+
+          "base-100": "#EDE9F1",
+
+          info: "#418DF1",
+
+          success: "#33CCBA",
+
+          warning: "#EEC159",
+
+          error: "#EA7571",
         },
       },
     ],

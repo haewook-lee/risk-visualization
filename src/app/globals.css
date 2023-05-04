@@ -25,6 +25,13 @@ body {
 }
 
 .leaflet-container {
+  margin: auto;
   height: 400px;
-  max-width: 650px;
+  max-width: 600px;
+}
+
+.ag-root-wrapper.ag-layout-normal {
+  height: 400px !important;
+  width: 90%;
+  margin: auto;
 }

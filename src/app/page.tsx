@@ -6,6 +6,7 @@ import csvToJson from "csvtojson"
 
 const Map = dynamic(() => import("../../components/LeafMap"), { ssr: false })
 const Table = dynamic(() => import("../../components/Table"))
+const Chart = dynamic(() => import("../../components/Chart"))
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -45,12 +46,15 @@ export default async function Home() {
 
   return (
     <>
-      <h1>Hello</h1>
-      <Map marks={data} />
-      <Table marks={data} />
-      {/* {data.map((value: any) => {
-        return <div key={value}>{value}</div>
-      })} */}
+      <div className="bg-white mx-auto my-24 p-6 max-w-3xl rounded-2xl">
+        <Map marks={data} />
+      </div>
+      <div className="bg-white mx-auto my-24 p-6 max-w-3xl rounded-2xl">
+        <Table marks={data} />
+      </div>
+      <div className="bg-white mx-auto my-24 p-6 max-w-3xl rounded-2xl">
+        <Chart marks={data} />
+      </div>
     </>
   )
 }
