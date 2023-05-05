@@ -10,6 +10,16 @@ const Chart = dynamic(() => import("../../components/Chart"))
 
 const inter = Inter({ subsets: ["latin"] })
 
+type Mark = {
+  "Asset Name": string
+  Lat: string
+  Long: string
+  "Business Category": string
+  "Risk Rating": string
+  "Risk Factors": Object
+  Year: string
+}
+
 async function getData() {
   const csvPath = path.join(process.cwd(), "public", "dataset.csv")
 
@@ -23,7 +33,8 @@ async function getData() {
       if (value === 0) {
         continue
       } else {
-        cleanFactors[key] = value.toFixed(2) // eslint-disable-line no-use-before-define
+        //@ts-ignore
+        cleanFactors[key] = value.toFixed(2)
       }
     }
 
@@ -35,25 +46,45 @@ async function getData() {
     value["Risk Factors"] = cleanFactors
   })
 
+  let dictData: any = {}
+
+  json.forEach((value: any) => {
+    if (!dictData[value.Year]) {
+      dictData[value.Year] = [value]
+    } else {
+      dictData[value.Year].push(value)
+    }
+  })
+
   // const jsonString = JSON.stringify(json, null, 2)
 
-  return json
+  return {
+    data: json,
+    sortedData: dictData,
+  }
 }
 
 export default async function Home() {
   const data = await getData()
-  // console.log(data.map((value: any) => value["Risk Factors"]))
 
   return (
     <>
-      <div className="bg-white mx-auto my-24 p-6 max-w-3xl rounded-2xl">
-        <Map marks={data} />
+      <div
+        className="mx-auto my-12 p-6 max-w-3xl rounded-2xl text-5xl text-focus"
+        style={{}}
+      >
+        <strong>Risk Visualization</strong>
       </div>
       <div className="bg-white mx-auto my-24 p-6 max-w-3xl rounded-2xl">
-        <Table marks={data} />
+        <Chart marks={data.sortedData} />
       </div>
+
       <div className="bg-white mx-auto my-24 p-6 max-w-3xl rounded-2xl">
-        <Chart marks={data} />
+        <Table marks={data.data} />
+      </div>
+
+      <div className="bg-white mx-auto my-24 p-6 max-w-3xl rounded-2xl">
+        <Map marks={data.data} />
       </div>
     </>
   )

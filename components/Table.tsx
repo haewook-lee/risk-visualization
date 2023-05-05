@@ -87,14 +87,26 @@ function Map({ marks }: any) {
   ])
 
   return (
-    <div className="ag-theme-alpine-dark">
-      <AgGridReact
-        rowData={rowData2}
-        columnDefs={columnDefs2}
-        onCellClicked={onCellClicked}
-        pagination={true}
-      ></AgGridReact>
-    </div>
+    <>
+      <div
+        style={{
+          margin: "auto",
+          maxWidth: "600px",
+          fontSize: "1.5rem",
+          color: "grey",
+        }}
+      >
+        <strong>Risk Data Table</strong>
+      </div>
+      <div className="ag-theme-alpine-dark" style={{ marginTop: "1rem" }}>
+        <AgGridReact
+          rowData={rowData2}
+          columnDefs={columnDefs2}
+          onCellClicked={onCellClicked}
+          pagination={true}
+        ></AgGridReact>
+      </div>
+    </>
   )
 }
 

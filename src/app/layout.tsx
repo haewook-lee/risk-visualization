@@ -2,6 +2,7 @@ import "./globals.css"
 import { Inter } from "next/font/google"
 import "leaflet/dist/leaflet.css"
 import Script from "next/script"
+import Link from "next/link"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -40,7 +41,9 @@ export default function RootLayout({
           <div>{children}</div>
           <footer className="footer footer-center p-4 bg-neutral text-neutral-content mt-64">
             <div>
-              <p>Copyright © 2023 - All right reserved by Haewook Lee</p>
+              <Link href="https://haewook-lee.github.io">
+                Copyright © 2023 - All right reserved by Haewook Lee
+              </Link>
             </div>
           </footer>
         </body>

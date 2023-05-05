@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react"
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet"
 import "leaflet/dist/leaflet.css"
 import "leaflet-canvas-marker"
-import L from "leaflet"
+import * as L from "leaflet"
 
 type Mark = {
   "Asset Name": string
@@ -28,6 +28,7 @@ function LeafletCanvasMarker({
   useEffect(() => {
     if (!map) return
 
+    // @ts-ignore: Unreachable code error
     let ciLayer = L.canvasIconLayer({}).addTo(map) // eslint-disable-line no-use-before-define
 
     // ciLayer.addOnClickListener(function (_e: any, data: any) {
@@ -118,6 +119,16 @@ function Map({ marks }: any) {
 
   return (
     <div>
+      <div
+        style={{
+          margin: "auto",
+          maxWidth: "600px",
+          fontSize: "1.5rem",
+          color: "grey",
+        }}
+      >
+        <strong>Risk Indicator Map</strong>
+      </div>
       <div id="map">
         <MapContainer
           className="markercluster-map"

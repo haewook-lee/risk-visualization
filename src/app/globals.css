@@ -22,6 +22,8 @@ body {
 
 #map {
   height: 400px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .leaflet-container {
