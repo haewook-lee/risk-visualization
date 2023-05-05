@@ -70,7 +70,7 @@ export default async function Home() {
     <>
       <div
         className="mx-auto my-12 p-6 max-w-5xl rounded-2xl text-5xl text-focus"
-        style={{}}
+        style={{ color: "black" }}
       >
         <strong>Risk Visualization</strong>
       </div>

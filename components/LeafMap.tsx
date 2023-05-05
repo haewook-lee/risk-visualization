@@ -143,7 +143,14 @@ function Map({ marks }: any) {
           <LeafletCanvasMarker marks={marks} years={years} />
         </MapContainer>
       </div>
-      <div style={{ display: "table", fontSize: "1.5rem", margin: "auto" }}>
+      <div
+        style={{
+          display: "table",
+          fontSize: "1.5rem",
+          margin: "auto",
+          color: "black",
+        }}
+      >
         Year: {years}
       </div>
       <div

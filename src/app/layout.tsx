@@ -35,7 +35,7 @@ export default function RootLayout({
         <body className={inter.className + "h-screen m-0 p-0 bg-primary"}>
           <nav className="navbar bg-neutral">
             <a className="btn btn-outline normal-case text-xl text-accent">
-              Risk-Viz
+              Risk
             </a>
           </nav>
           <div>{children}</div>
