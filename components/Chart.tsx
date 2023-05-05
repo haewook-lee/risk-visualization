@@ -229,6 +229,7 @@ function LineChart({ marks }: any) {
         <Line options={options} data={data} style={{ marginBottom: "1rem" }} />
         <select
           className="select w-full max-w-xs"
+          style={{ backgroundColor: "#161E27", color: "#afffd6" }}
           onChange={(e) => changeData(e.target.value)}
           defaultValue={[name, category]}
         >

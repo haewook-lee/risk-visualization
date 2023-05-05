@@ -32,7 +32,7 @@ export default function RootLayout({
             crossOrigin=""
           ></Script>
         </head>
-        <body className={inter.className + "h-screen m-0 p-0 bg-base-100"}>
+        <body className={inter.className + "h-screen m-0 p-0 bg-primary"}>
           <nav className="navbar bg-neutral">
             <a className="btn btn-outline normal-case text-xl text-accent">
               Risk-Viz

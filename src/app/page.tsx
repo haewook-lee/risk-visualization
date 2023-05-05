@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { Inter } from "next/font/google"
 import dynamic from "next/dynamic"
 import path from "path"
@@ -70,20 +69,20 @@ export default async function Home() {
   return (
     <>
       <div
-        className="mx-auto my-12 p-6 max-w-3xl rounded-2xl text-5xl text-focus"
+        className="mx-auto my-12 p-6 max-w-5xl rounded-2xl text-5xl text-focus"
         style={{}}
       >
         <strong>Risk Visualization</strong>
       </div>
-      <div className="bg-white mx-auto my-24 p-6 max-w-3xl rounded-2xl">
+      <div className="bg-white mx-auto my-24 p-6 max-w-5xl rounded-2xl">
         <Chart marks={data.sortedData} />
       </div>
 
-      <div className="bg-white mx-auto my-24 p-6 max-w-3xl rounded-2xl">
+      <div className="bg-white mx-auto my-24 p-6 max-w-5xl rounded-2xl">
         <Table marks={data.data} />
       </div>
 
-      <div className="bg-white mx-auto my-24 p-6 max-w-3xl rounded-2xl">
+      <div className="bg-white mx-auto my-24 p-6 max-w-5xl rounded-2xl">
         <Map marks={data.data} />
       </div>
     </>

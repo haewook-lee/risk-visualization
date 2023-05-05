@@ -29,7 +29,7 @@ body {
 .leaflet-container {
   margin: auto;
   height: 400px;
-  max-width: 600px;
+  max-width: 875px;
 }
 
 .ag-root-wrapper.ag-layout-normal {

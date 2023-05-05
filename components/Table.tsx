@@ -91,7 +91,7 @@ function Map({ marks }: any) {
       <div
         style={{
           margin: "auto",
-          maxWidth: "600px",
+          maxWidth: "875px",
           fontSize: "1.5rem",
           color: "grey",
         }}

@@ -122,7 +122,7 @@ function Map({ marks }: any) {
       <div
         style={{
           margin: "auto",
-          maxWidth: "600px",
+          maxWidth: "875px",
           fontSize: "1.5rem",
           color: "grey",
         }}
@@ -143,6 +143,9 @@ function Map({ marks }: any) {
           <LeafletCanvasMarker marks={marks} years={years} />
         </MapContainer>
       </div>
+      <div style={{ display: "table", fontSize: "1.5rem", margin: "auto" }}>
+        Year: {years}
+      </div>
       <div
         style={{
           display: "block",
@@ -150,18 +153,22 @@ function Map({ marks }: any) {
           maxWidth: "300px",
         }}
       >
-        <div className="btn-group w-full max-w-lg">
+        <div id="map-filter-buttons" className="btn-group w-full max-w-lg">
           <button
             className="normal-case btn"
             style={{ width: "60px" }}
-            onClick={() => changeDecades(2030)}
+            onClick={(e) => {
+              changeDecades(2030)
+            }}
           >
             2030s
           </button>
           <button
-            className="normal-case btn btn-active"
+            className="normal-case btn"
             style={{ width: "60px" }}
-            onClick={() => changeDecades(2040)}
+            onClick={(e) => {
+              changeDecades(2040)
+            }}
           >
             2040s
           </button>
