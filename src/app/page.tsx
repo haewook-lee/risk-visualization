@@ -2,6 +2,8 @@ import { Inter } from "next/font/google"
 import dynamic from "next/dynamic"
 import path from "path"
 import csvToJson from "csvtojson"
+import Loading from "./loading"
+import { Suspense } from "react"
 
 const Map = dynamic(() => import("../../components/LeafMap"), { ssr: false })
 const Table = dynamic(() => import("../../components/Table"))
@@ -75,7 +77,9 @@ export default async function Home() {
         <strong>Risk Visualization</strong>
       </div>
       <div className="bg-white mx-auto my-24 p-6 max-w-5xl rounded-2xl">
-        <Chart marks={data.sortedData} />
+        <Suspense fallback={<Loading />}>
+          <Chart marks={data.sortedData} />
+        </Suspense>
       </div>
 
       <div className="bg-white mx-auto my-24 p-6 max-w-5xl rounded-2xl">

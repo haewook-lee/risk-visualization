@@ -3,6 +3,8 @@ import { Inter } from "next/font/google"
 import "leaflet/dist/leaflet.css"
 import Script from "next/script"
 import Link from "next/link"
+import Loading from "./loading"
+import { Suspense } from "react"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -38,6 +40,7 @@ export default function RootLayout({
               Risk
             </a>
           </nav>
+          <Suspense fallback={<Loading />} />
           <div>{children}</div>
           <footer className="footer footer-center p-4 bg-neutral text-neutral-content mt-64">
             <div>
